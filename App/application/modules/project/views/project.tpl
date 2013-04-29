@@ -44,7 +44,17 @@
 				<section id="reward-tiers">
 					<h2>Reward Tiers</h2>
 
-					<section></section>
+					{if $rewards}
+
+						{foreach $rewards AS $reward}
+						<section>
+							<a href="{site_url('pledge/'.$project->id.'/tier/'.$reward->id)}">
+								<span class="heading">{$reward->price}</span>
+							</a>
+						</section>
+						{/foreach}
+
+					{/if}
 				</section>
 			</aside>
 		</section>
